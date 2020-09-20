@@ -1,25 +1,32 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function LED1_On() {
-	//alert("led on");
-	console.log("led on");
-	//document.getElementById("sensor").innerHTML="led on";
-	message =new Paho.MQTT.Message("LED1_ALTO");
+function ENDEDIDO_1() {
+	
+	message =new Paho.MQTT.Message("L10");
 	message.destinationName = "654hector1@gmail.com/kop";
 	client.send(message);
   
 }
-function LED1_Off(){	
-	//alert("led off");
-	console.log("led off");
-	//document.getElementById("sensor").innerHTML="led off";
-	message =new Paho.MQTT.Message("LED1_ALTO");
+function ENDEDIDO_2(){	
+	
+	message =new Paho.MQTT.Message("L1N");
 	message.destinationName = "654hector1@gmail.com/kop";
 	client.send(message);
-	
 }
-
-
+function ENDEDIDO_1_1() {
+	
+	message =new Paho.MQTT.Message("L2O");
+	message.destinationName = "654hector1@gmail.com/kop";
+	client.send(message);
+  
+}
+function ENDEDIDO_2_2() {
+	
+	message =new Paho.MQTT.Message("L2N");
+	message.destinationName = "654hector1@gmail.com/kop";
+	client.send(message);
+  
+}
 
 
 
@@ -69,6 +76,26 @@ function LED1_Off(){
 
   // called when a message arrives
   function onMessageArrived(message) {
-    console.log("mensaje del sensor:"+message.payloadString);
+	text=(message.payloadString);
+	console.log(text)
+	if(text=="foco1 encendido"){
+		document.getElementById("respuesta1").innerHTML = text;	
+	}
+	if(text=="foco1 Apagado"){
+		document.getElementById("respuesta1").innerHTML = text;	
+	}
+	if(text=="foco2 encendido"){
+		document.getElementById("respuesta2").innerHTML = text;	
+	}
+	if(text=="foco2 Apagado"){
+		document.getElementById("respuesta2").innerHTML = text;	
+	}
+	
+ 
+	//console.log("mensaje del sensor:"+message.payloadString);
+	
+	
+
+  
   }
   
