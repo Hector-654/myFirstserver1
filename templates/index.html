@@ -9,14 +9,15 @@
 	<title>Login basico</title>
 	
 	<script type="text/javascript">
-		function validar()
-		{
+		function validar(){
+			location.href ="http://oneserve1.herokuapp.com";
+		}
 			var usuario = document.getElementById("usuario").value;
 			var Contraseña = document.getElementById("pass").value;	
 
 			if(usuario == "hector" && Contraseña == "1234")
 			{
-				location.href ="http://oneserve1.herokuapp.com";
+				location.href ="http://server-ap21.herokuapp.com";
 			}
 			else
 			{
